@@ -1,7 +1,7 @@
 
 %define name	subdownloader
 %define version	2.0.9.3
-%define rel	1
+%define rel	2
 
 Summary:	Automatic subtitle downloader/uploader
 Name:		%{name}
@@ -18,6 +18,7 @@ BuildArch:	noarch
 BuildRequires:	imagemagick
 BuildRequires:	python-qt4-devel
 Requires:	python-qt4-gui
+Requires:	python-sip
 
 %description
 Open Source tool written in Python for automatic download/upload
