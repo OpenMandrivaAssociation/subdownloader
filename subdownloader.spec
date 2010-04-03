@@ -1,7 +1,7 @@
 
 %define name	subdownloader
-%define version	2.0.9.3
-%define rel	3
+%define version	2.0.10
+%define rel	1
 
 Summary:	Automatic subtitle downloader/uploader
 Name:		%{name}
@@ -12,7 +12,6 @@ Group:		Video
 URL:		http://subdownloader.net/
 Source:		http://launchpad.net/subdownloader/trunk/%(A=%version; echo ${A%.*})/+download/subdownloader-%{version}.tar.gz
 Patch0:		subdownloader-better-desktop-entry.patch
-Patch1:		subdownloader-disable-updates.patch
 BuildRoot:	%{_tmppath}/%{name}-root
 BuildArch:	noarch
 BuildRequires:	imagemagick
@@ -26,9 +25,8 @@ subtitles for videofiles (DIVX,MPEG,AVI,VOB,etc) and DVD's using fast
 hashing.
 
 %prep
-%setup -q -n %name
+%setup -q
 %patch0 -p1
-%patch1 -p1
 
 # prebuilt files
 rm gui/*_ui.py
@@ -39,7 +37,7 @@ rm gui/*_ui.py
 %install
 rm -rf %{buildroot}
 install -d -m755 %{buildroot}%{_datadir}/%{name}
-cp -a */ __init__.py run.py %{buildroot}%{_datadir}/%{name}
+cp -a */ *.py %{buildroot}%{_datadir}/%{name}
 chmod 0755 %{buildroot}%{_datadir}/%{name}/run.py
 
 find %{buildroot}%{_datadir}/%{name} -name '*.pot' -delete
