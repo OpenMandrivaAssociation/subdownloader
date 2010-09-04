@@ -1,6 +1,6 @@
 
 %define name	subdownloader
-%define version	2.0.10
+%define version	2.0.13
 %define rel	1
 
 Summary:	Automatic subtitle downloader/uploader
