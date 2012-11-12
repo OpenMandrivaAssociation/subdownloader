@@ -1,0 +1,18 @@
+diff -Nurpa -x '*~' -x '*.orig' -x '*.rej' -x '*.swp' subdownloader-2.0.10/subdownloader.desktop newdir/subdownloader.desktop
+--- subdownloader-2.0.10/subdownloader.desktop	2010-02-24 14:11:15.000000000 +0200
++++ newdir/subdownloader.desktop	2010-04-03 04:14:26.007016485 +0300
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Version=1.0
+ Name=SubDownloader
+-Comment=Application to download/upload subtitles of your movies.
++Comment=Download/upload subtitles of video files
+ Exec=subdownloader
+ Icon=subdownloader
+ Path=/usr/share/subdownloader
+@@ -12,4 +12,4 @@ X-DCOP-ServiceType=unique
+ X-KDE-SubstituteUID=false
+ X-KDE-Username=
+ Type=Application
+-Categories=Qt;KDE;AudioVideo;Video;
++Categories=Qt;AudioVideo;Video;
