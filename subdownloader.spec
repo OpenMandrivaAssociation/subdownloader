@@ -1,18 +1,12 @@
-
-%define name	subdownloader
-%define version	2.0.13
-%define rel	1
-
 Summary:	Automatic subtitle downloader/uploader
-Name:		%{name}
-Version:	%{version}
-Release:	%mkrel %{rel}
+Name:		subdownloader
+Version:	2.0.18
+Release:	1
 License:	GPLv2+
 Group:		Video
 URL:		http://subdownloader.net/
-Source:		http://launchpad.net/subdownloader/trunk/%(A=%version; echo ${A%.*})/+download/subdownloader-%{version}.tar.gz
+Source:		%{name}_%{version}.orig.tar.gz
 Patch0:		subdownloader-better-desktop-entry.patch
-BuildRoot:	%{_tmppath}/%{name}-root
 BuildArch:	noarch
 BuildRequires:	imagemagick
 BuildRequires:	python-qt4-devel
@@ -35,7 +29,6 @@ rm gui/*_ui.py
 %make -Cgui
 
 %install
-rm -rf %{buildroot}
 install -d -m755 %{buildroot}%{_datadir}/%{name}
 cp -a */ *.py %{buildroot}%{_datadir}/%{name}
 chmod 0755 %{buildroot}%{_datadir}/%{name}/run.py
@@ -67,11 +60,7 @@ install -m644 %{name}.1 %{buildroot}%{_mandir}/man1
 
 %{find_lang} %{name}
 
-%clean
-rm -rf %{buildroot}
-
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc ChangeLog
 %{_bindir}/%{name}
 %{_datadir}/%{name}
@@ -81,36 +70,3 @@ rm -rf %{buildroot}
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/hicolor/*/%{name}.png
 %{_mandir}/man1/%{name}.1*
-
-
-
-%changelog
-* Sat Sep 04 2010 Anssi Hannula <anssi@mandriva.org> 2.0.13-1mdv2011.0
-+ Revision: 575962
-- new version
-
-* Sat Apr 03 2010 Anssi Hannula <anssi@mandriva.org> 2.0.10-1mdv2011.0
-+ Revision: 530856
-- new version
-  o fixes connection issues
-- rediff better-desktop-entry.patch
-- remove KDE entry from .desktop file as this is not a KDE application
-- drop disable-updates.patch, fixed upstream
-
-* Sun Sep 20 2009 Thierry Vignaud <tv@mandriva.org> 2.0.9.3-3mdv2010.0
-+ Revision: 445267
-- rebuild
-
-* Mon Mar 09 2009 Anssi Hannula <anssi@mandriva.org> 2.0.9.3-2mdv2009.1
-+ Revision: 353249
-- requires python-sip
-
-* Sun Mar 08 2009 Anssi Hannula <anssi@mandriva.org> 2.0.9.3-1mdv2009.1
-+ Revision: 352734
-- new version
-- disable checking for updates (disable-updates.patch)
-
-* Sun Nov 30 2008 Anssi Hannula <anssi@mandriva.org> 2.0.8.1-1mdv2009.1
-+ Revision: 308457
-- initial Mandriva release
-
