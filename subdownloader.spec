@@ -1,7 +1,7 @@
 Summary:	Automatic subtitle downloader/uploader
 Name:		subdownloader
 Version:	2.0.18
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Video
 URL:		http://subdownloader.net/
@@ -11,7 +11,7 @@ BuildArch:	noarch
 BuildRequires:	imagemagick
 BuildRequires:	python-qt4-devel
 Requires:	python-qt4-gui
-Requires:	python-sip
+Requires:	sip-api(%{sip_api_major}) = %{sip_api}
 
 %description
 Open Source tool written in Python for automatic download/upload
