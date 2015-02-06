@@ -1,7 +1,7 @@
 Summary:	Automatic subtitle downloader/uploader
 Name:		subdownloader
 Version:	2.0.18
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Video
 URL:		http://subdownloader.net/
