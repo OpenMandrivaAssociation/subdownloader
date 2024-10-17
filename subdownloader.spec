@@ -4,7 +4,7 @@ Version:	2.0.18
 Release:	3
 License:	GPLv2+
 Group:		Video
-URL:		http://subdownloader.net/
+URL:		https://subdownloader.net/
 Source:		%{name}_%{version}.orig.tar.gz
 Patch0:		subdownloader-better-desktop-entry.patch
 BuildArch:	noarch
