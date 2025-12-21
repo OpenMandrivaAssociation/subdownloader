@@ -8,6 +8,7 @@ URL:		https://subdownloader.net/
 Source:		%{name}_%{version}.orig.tar.gz
 Patch0:		subdownloader-better-desktop-entry.patch
 BuildArch:	noarch
+BuildRequires:	make
 BuildRequires:	imagemagick
 BuildRequires:	python-qt4-devel
 Requires:	python-qt4-gui
